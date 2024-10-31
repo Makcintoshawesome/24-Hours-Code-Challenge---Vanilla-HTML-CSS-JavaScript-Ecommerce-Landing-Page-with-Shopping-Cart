@@ -22,7 +22,10 @@ function addToCart(name, price) {
 function updateCartDisplay() {
     const cartItemCount = document.getElementById('cartItemCount');
     const cartItems = document.getElementById('cartItems');
+    const cartSubtotal = document.getElementById('cartSubtotal');
     const cartTotal = document.getElementById('cartTotal');
+    const shippingCost = document.getElementById('shippingCost');
+    const taxAmount = document.getElementById('taxAmount');
     
     if (cartItemCount) {
         cartItemCount.textContent = cart.length;
@@ -32,19 +35,36 @@ function updateCartDisplay() {
         cartItems.innerHTML = '';
         cart.forEach(item => {
             cartItems.innerHTML += `
-                <div class="dropdown-item d-flex justify-content-between align-items-center">
-                    <span>${item.name}</span>
-                    <span>$${item.price.toFixed(2)}</span>
-                    <button class="btn btn-sm btn-danger" onclick="removeFromCart(${item.id})">×</button>
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="${item.image}" class="img-fluid rounded-start" alt="${item.name}">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">Price: $${item.price.toFixed(2)}</p>
+                                <p class="card-text">
+                                    <small class="text-muted">Quantity: ${item.quantity}</small>
+                                </p>
+                                <button class="btn btn-sm btn-outline-danger" onclick="removeFromCart(${item.id})">Remove</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             `;
         });
     }
     
-    if (cartTotal) {
-        const total = cart.reduce((sum, item) => sum + item.price, 0);
-        cartTotal.textContent = `$${total.toFixed(2)}`;
-    }
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const shipping = subtotal > 0 ? 10 : 0; // Example shipping cost
+    const tax = subtotal * 0.1; // Example tax rate (10%)
+    const total = subtotal + shipping + tax;
+    
+    if (cartSubtotal) cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+    if (shippingCost) shippingCost.textContent = `$${shipping.toFixed(2)}`;
+    if (taxAmount) taxAmount.textContent = `$${tax.toFixed(2)}`;
+    if (cartTotal) cartTotal.textContent = `$${total.toFixed(2)}`;
 }
 
 // Function to remove item from cart

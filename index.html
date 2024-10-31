@@ -51,29 +51,26 @@
             <li class="nav-item">
                 <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
             </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="cart-overview" role="button" 
-       data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="bi bi-bag"></i>
-        <span class="badge bg-danger" id="cartItemCount">0</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="cartDropdown" 
-        style="min-width: 250px;">
-        <div id="cartItems">
-            <!-- Cart items will be inserted here -->
-        </div>
-        <li><hr class="dropdown-divider"></li>
-        <li class="d-flex justify-content-between">
-            <strong>Total</strong>
-            <strong id="cartTotal">$0.00</strong>
-        </li>
-        <li class="text-center mt-2">
-            <a href="cart.html" class="btn btn-lg" 
-               style="background: rgba(0, 0, 0, 1); color: #fff; border-radius: 0px;">
-                Go to Checkout
-            </a>
-        </li>
-    </ul>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="cart-overview" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-bag"></i>
+    <span class="badge bg-danger rounded-pill" id="cartItemCount">0</span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="cartDropdown" style="min-width: 300px;">
+    <h6 class="dropdown-header">Shopping Bag</h6>
+    <div id="cartItems">
+      <!-- Cart items will be inserted here -->
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="d-flex justify-content-between align-items-center">
+      <span>Subtotal:</span>
+      <strong id="cartTotal">$0.00</strong>
+    </div>
+    <div class="d-grid gap-2 mt-3">
+      <a href="cart.html" class="btn btn-dark btn-block">View Bag</a>
+      <a href="checkout.html" class="btn btn-outline-dark btn-block">Checkout</a>
+    </div>
+  </div>
 </li>
             <!-- Currency Dropdown -->
             <li class="nav-item dropdown">
@@ -254,7 +251,7 @@
                     <p>Festive Looks Rust Red Ribbed Velvet Long Sleeve Bodysuit</p>
                     <span><b>$38</b></span>
                    <button class="btn btn-dark btn-sm mt-2 buy-btn" 
-        onclick="addToCart('Product Name', 38.00)">
+        onclick="addToCart('Festive Looks Rust Red Ribbed Velvet Long Sleeve Bodysuit', 38.00)">
     <i class="fas fa-shopping-cart"></i> Buy
 </button>
                 </div>
@@ -265,9 +262,10 @@
                     <p>Chevron Flap Crossbody Bag</p>
                     <span style="color:#C1272D; font-weight: bold;">$5.77</span>
                     <span style="color: black; text-decoration: line-through;">$7.34</span>
-                    <button class="btn btn-dark btn-sm mt-2 buy-btn">
-                        <i class="fas fa-shopping-cart"></i> Buy
-                    </button> <!-- Buy button -->
+                  <button class="btn btn-dark btn-sm mt-2 buy-btn" 
+        onclick="addToCart('Chevron Flap Crossbody Bag', 5.77)">
+    <i class="fas fa-shopping-cart"></i> Buy
+</button>
                 </div>
             </div>
             <div class="col-md-2">
@@ -276,9 +274,10 @@
                     <p>Manilla Tan Multi Plaid Oversized Fringe Scarf</p>
                     <span style="color:#C1272D; font-weight: bold;">$29</span>
                     <span style="color: black; text-decoration: line-through;">$39</span>
-                    <button class="btn btn-dark btn-sm mt-2 buy-btn">
-                        <i class="fas fa-shopping-cart"></i> Buy
-                    </button> <!-- Buy button -->
+                 <button class="btn btn-dark btn-sm mt-2 buy-btn" 
+        onclick="addToCart('Manilla Tan Multi Plaid Oversized Fringe Scarf', 29.00)">
+    <i class="fas fa-shopping-cart"></i> Buy
+</button>
                 </div>
             </div>
             <div class="col-md-2">
@@ -286,9 +285,10 @@
                     <img src="images/puff.png" alt="Diamante Puff Sleeve Dress - Black" class="img-fluid">
                     <p>Diamante Puff Sleeve Dress - Black</p>
                     <span><b>$45.99</b></span>
-                    <button class="btn btn-dark btn-sm mt-2 buy-btn">
-                        <i class="fas fa-shopping-cart"></i> Buy
-                    </button> <!-- Buy button -->
+                    <button class="btn btn-dark btn-sm mt-2 buy-btn" 
+        onclick="addToCart('Manilla Tan Multi Plaid Oversized Fringe Scarf', 45.99)">
+    <i class="fas fa-shopping-cart"></i> Buy
+</button>
                 </div>
             </div>
             <div class="col-md-2">
@@ -297,9 +297,10 @@
                     <p>Banneth Open Front Formal Dress in Black</p>
                     <span style="color:#C1272D; font-weight: bold;">$69</span>
                     <span style="color: black; text-decoration: line-through;">$99.95</span>
-                    <button class="btn btn-dark btn-sm mt-2 buy-btn">
-                        <i class="fas fa-shopping-cart"></i> Buy
-                    </button> <!-- Buy button -->
+                    <button class="btn btn-dark btn-sm mt-2 buy-btn" 
+        onclick="addToCart('Manilla Tan Multi Plaid Oversized Fringe Scarf', 69.00)">
+    <i class="fas fa-shopping-cart"></i> Buy
+</button>
                 </div>
             </div>
         </div> <!-- End of row -->
