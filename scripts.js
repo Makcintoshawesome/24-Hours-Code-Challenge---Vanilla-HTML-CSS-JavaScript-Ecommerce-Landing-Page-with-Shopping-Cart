@@ -1,87 +1,104 @@
-// Initialize cart array in localStorage if it doesn't exist
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+// Initialize cart as a global variable
+let cart = [];
 
-// Function to add item to cart
-function addToCart(name, price) {
-    const item = {
-        id: Date.now(), // unique ID for each item
-        name: name,
-        price: price,
+// Modified addToCart function
+function addToCart(button) {
+    const productContainer = button.closest('.col-md-2');
+    if (!productContainer) return;
+
+    const product = {
+        id: productContainer.getAttribute('data-id') || Date.now().toString(),
+        name: productContainer.querySelector('.product-name').textContent,
+        price: parseFloat(productContainer.querySelector('.product-price').textContent.replace('$', '')),
+        image: productContainer.querySelector('img').src,
         quantity: 1
     };
+
+    const existingProduct = cart.find(item => item.id === product.id);
     
-    cart.push(item);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartDisplay();
-    
-    // Show confirmation message
-    alert(`${name} has been added to your cart!`);
+    if (existingProduct) {
+        alert("Product already in cart!");
+        return;
+    }
+
+    cart.push(product);
+    updateCartCount();
+    updateCartDropdown();
+    saveCartToLocalStorage();
+    alert(`${product.name} has been added to the cart!`);
 }
 
-// Function to update cart display
-function updateCartDisplay() {
-    const cartItemCount = document.getElementById('cartItemCount');
+// Update cart count
+function updateCartCount() {
+    const cartCount = document.getElementById('cartItemCount');
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
+}
+
+// Update cart dropdown
+function updateCartDropdown() {
     const cartItems = document.getElementById('cartItems');
-    const cartSubtotal = document.getElementById('cartSubtotal');
+    if (!cartItems) return;
+
+    cartItems.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'dropdown-item d-flex align-items-center gap-2 py-2';
+        itemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover;">
+            <div class="flex-grow-1">
+                <p class="mb-0" style="font-size: 0.9rem;">${item.name}</p>
+                <span class="text-muted" style="font-size: 0.8rem;">$${item.price.toFixed(2)}</span>
+            </div>
+            <button class="btn btn-sm btn-danger" onclick="removeFromCart('${item.id}')">×</button>
+        `;
+        cartItems.appendChild(itemDiv);
+        total += item.price;
+    });
+
     const cartTotal = document.getElementById('cartTotal');
-    const shippingCost = document.getElementById('shippingCost');
-    const taxAmount = document.getElementById('taxAmount');
-    
-    if (cartItemCount) {
-        cartItemCount.textContent = cart.length;
+    if (cartTotal) {
+        cartTotal.textContent = `$${total.toFixed(2)}`;
     }
-    
-    if (cartItems) {
-        cartItems.innerHTML = '';
-        cart.forEach(item => {
-            cartItems.innerHTML += `
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="${item.image}" class="img-fluid rounded-start" alt="${item.name}">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">${item.name}</h5>
-                                <p class="card-text">Price: $${item.price.toFixed(2)}</p>
-                                <p class="card-text">
-                                    <small class="text-muted">Quantity: ${item.quantity}</small>
-                                </p>
-                                <button class="btn btn-sm btn-outline-danger" onclick="removeFromCart(${item.id})">Remove</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        });
+}
+
+// Remove item from cart
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    updateCartCount();
+    updateCartDropdown();
+    saveCartToLocalStorage();
+    if (window.location.pathname.includes('cart.html')) {
+        renderCart();
     }
-    
-    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const shipping = subtotal > 0 ? 10 : 0; // Example shipping cost
-    const tax = subtotal * 0.1; // Example tax rate (10%)
-    const total = subtotal + shipping + tax;
-    
-    if (cartSubtotal) cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
-    if (shippingCost) shippingCost.textContent = `$${shipping.toFixed(2)}`;
-    if (taxAmount) taxAmount.textContent = `$${tax.toFixed(2)}`;
-    if (cartTotal) cartTotal.textContent = `$${total.toFixed(2)}`;
 }
 
-// Function to remove item from cart
-function removeFromCart(itemId) {
-    cart = cart.filter(item => item.id !== itemId);
+// Save cart to localStorage
+function saveCartToLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartDisplay();
 }
 
-// Function to empty cart
-function emptyCart() {
-    cart = [];
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartDisplay();
+// Load cart from localStorage
+function loadCartFromLocalStorage() {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartCount();
+        updateCartDropdown();
+    }
 }
 
-// Initialize cart display when page loads
+// Initialize when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    updateCartDisplay();
+    loadCartFromLocalStorage();
+
+    // Add click event listeners to all buy buttons
+    document.querySelectorAll('.buy-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            addToCart(button);
+        });
+    });
 });

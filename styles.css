@@ -135,3 +135,6 @@ padding: 20px; /* Remove default padding */
     display: block;
     width: 100%;
 }
+/* Cart page styles */
+.cart-container {
+    margin-top: 2rem;
