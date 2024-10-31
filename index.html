@@ -51,22 +51,29 @@
             <li class="nav-item">
                 <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
             </li>
-        <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="cart-overview" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <i class="bi bi-bag"></i>
-    <span class="cart-count badge bg-danger" id="cartItemCount">0</span>
-  </a>
-  <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="cartDropdown" style="min-width: 250px;">
-    <div id="cartItems"></div> <li><hr class="dropdown-divider"></li>
-    <li class="d-flex justify-content-between">
-      <strong>Total</strong>
-      <strong id="cartTotal">$0.00</strong>
-    </li>
-    <li class="text-center mt-2">
-      <a href="cart.html" class="btn btn-lg" style="background: rgba(0, 0, 0, 1);
-      color: #fff;border-radius: 0px;">Go to Checkout</a>
-    </li>
-  </ul>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="cart-overview" role="button" 
+       data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-bag"></i>
+        <span class="badge bg-danger" id="cartItemCount">0</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="cartDropdown" 
+        style="min-width: 250px;">
+        <div id="cartItems">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <li><hr class="dropdown-divider"></li>
+        <li class="d-flex justify-content-between">
+            <strong>Total</strong>
+            <strong id="cartTotal">$0.00</strong>
+        </li>
+        <li class="text-center mt-2">
+            <a href="cart.html" class="btn btn-lg" 
+               style="background: rgba(0, 0, 0, 1); color: #fff; border-radius: 0px;">
+                Go to Checkout
+            </a>
+        </li>
+    </ul>
 </li>
             <!-- Currency Dropdown -->
             <li class="nav-item dropdown">
@@ -246,9 +253,10 @@
                     <img src="images/festive.png" alt="Festive Looks" class="img-fluid">
                     <p>Festive Looks Rust Red Ribbed Velvet Long Sleeve Bodysuit</p>
                     <span><b>$38</b></span>
-                    <button class="btn btn-dark btn-sm mt-2 buy-btn" onclick="addToCart('Festive Looks Rust Red Ribbed Velvet Long Sleeve Bodysuit', 38)">
-      <i class="fas fa-shopping-cart"></i> Buy
-    </button> <!-- Buy button -->
+                   <button class="btn btn-dark btn-sm mt-2 buy-btn" 
+        onclick="addToCart('Product Name', 38.00)">
+    <i class="fas fa-shopping-cart"></i> Buy
+</button>
                 </div>
             </div>
             <div class="col-md-2">

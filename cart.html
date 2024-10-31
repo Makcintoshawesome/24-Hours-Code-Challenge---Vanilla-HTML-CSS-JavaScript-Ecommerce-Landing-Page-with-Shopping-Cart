@@ -7,25 +7,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="cart-page">
+<div class="cart-page">
     <h1>Your Shopping Cart</h1>
     <table class="shopping-cart">
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Subtotal</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="cart-items">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="cartItems">
+            <!-- Cart items will be inserted here -->
         </tbody>
     </table>
-    <p id="total-price">Total: $0.00</p>
-    <button id="empty-cart" onclick="emptyCart()">Empty Cart</button>
-    <button id="checkout" onclick="goToCheckout()">Proceed to Checkout</button>
-  </div>
+    <p>Total: <span id="cartTotal">$0.00</span></p>
+    <button class="btn btn-danger" onclick="emptyCart()">Empty Cart</button>
+    <button class="btn btn-primary" onclick="window.location.href='checkout.html'">
+        Proceed to Checkout
+    </button>
+</div>
 
   <script src="scripts.js"></script>
 </body>
