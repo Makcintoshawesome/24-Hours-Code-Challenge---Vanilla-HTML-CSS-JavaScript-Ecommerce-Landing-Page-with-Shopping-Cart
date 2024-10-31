@@ -1,0 +1,124 @@
+/* styles.css */
+
+body {
+    font-family: Montserrat;
+    max-width: 1440px; /* Set maximum width */
+    margin: 0 auto; /* Center the body horizontally */
+    padding: 0; /* Remove default padding */
+}
+
+.container {
+    width: 100%; /* Ensure the container takes full width */
+    padding: 0 15px; /* Optional: Add some padding to the container */
+}
+
+.navbar, .carousel, .promo-bar {
+    width: 100%; /* Ensure these elements take full width */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.hero-banner {
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-banner h2 {
+    font-size: 4rem;
+}
+
+.hero-banner h3 {
+    font-size: 2.5rem;
+}
+.custom-bg {
+    background: rgba(242, 242, 242, 1);
+    font-size: 12px;
+}
+.custom-bg-deals {
+    background:#fff;
+    color: #000;
+}
+.custom-bg-vip {
+   background-image: url('images/bg.png');
+    color: #fff;
+}
+.custom-bg-new {
+   background-image: url('images/newbg.png');
+    color: #fff;
+    background-size: cover;
+     background-position: center;"
+}
+.custom-bg-recently {
+  margin: 0 auto; /* Center the body horizontally */
+    padding: 0; /* Remove default padding */
+}
+.custom-bg-inspo{
+background: #F2F2F2;
+
+}
+.custom-bg-signup{
+background: #000;
+color: #fff;
+    padding: 10px; /* Remove default padding */
+}
+.custom-bg-footer{
+color: #000;
+padding: 20px; /* Remove default padding */
+}
+.p-img{
+    width:37.5;
+    height: 25px;
+}
+ .currency-dropdown {
+    border: 1px solid #ccc; /* Border color */
+            border-radius: 20px; /* Rounded corners */
+            display: inline-flex;
+            align-items: center;
+ }
+     .icon-bold {
+        font-size: 1.5rem; /* Adjust size as needed */
+
+    }
+
+    .carousel-item {
+    height: 650px; /* Ensure all slides are the same height */
+}
+
+.carousel-caption {
+    bottom: 20%; /* Adjust caption position */
+}
+.carousel-indicators button {
+    width: 12px; /* Set width */
+    height: 12px; /* Set height */
+    border-radius: 50%; /* Make it circular */
+}
+.carousel-indicators .active {
+    background-color: #fff; /* Change active indicator color */
+}
+.carousel-indicators button {
+    background-color: #fff; /* Default color for inactive indicators */
+}
+/* ... your existing CSS styles ... */
+
+/* Additional CSS for the cart page */
+.cart-page {
+  margin: 20px;
+}
+
+.shopping-cart {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shopping-cart th, .shopping-cart td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.shopping-cart th {
+  background-color: #f2f2f2;
+}

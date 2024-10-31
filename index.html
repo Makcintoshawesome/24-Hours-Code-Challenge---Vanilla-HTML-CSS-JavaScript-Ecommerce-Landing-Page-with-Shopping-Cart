@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Friday Sale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Test styling for debugging purposes -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
+        <!-- Left Nav Links -->
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Women</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Plus</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Men</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Accessories</a>
+            </li>
+        </ul>
+
+        <!-- Center Logo -->
+        <a class="navbar-brand mx-auto" href="#">
+            <img src="images/Logo.png" alt="Logo" height="16">
+        </a>
+
+        <!-- Right Nav Icons -->
+        <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-person"></i></a>
+            </li>
+         
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-heart"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-headset"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
+            </li>
+        <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="cart-overview" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-bag"></i>
+    <span class="cart-count badge bg-danger" id="cartItemCount">0</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="cartDropdown" style="min-width: 250px;">
+    <div id="cartItems"></div> <li><hr class="dropdown-divider"></li>
+    <li class="d-flex justify-content-between">
+      <strong>Total</strong>
+      <strong id="cartTotal">$0.00</strong>
+    </li>
+    <li class="text-center mt-2">
+      <a href="cart.html" class="btn btn-lg" style="background: rgba(0, 0, 0, 1);
+      color: #fff;border-radius: 0px;">Go to Checkout</a>
+    </li>
+  </ul>
+</li>
+            <!-- Currency Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle currency-dropdown" href="#" id="currencyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://flagcdn.com/us.svg" alt="USD" width="20" class="me-1"> USD $
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="currencyDropdown">
+                    <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/us.svg" alt="USD" width="20" class="me-2"> USD $</a></li>
+                    <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/eu.svg" alt="EUR" width="20" class="me-2"> EUR €</a></li>
+                    <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/gb.svg" alt="GBP" width="20" class="me-2"> GBP £</a></li>
+                    <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/jp.svg" alt="JPY" width="20" class="me-2"> JPY ¥</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- Promo Bar -->
+<div class="container-fluid text-left py-2 custom-bg">
+    <div class="row justify-content-center">
+        <div class="col-md-2 d-flex align-items-center">
+           <i class='bi bi-award icon-bold me-2'></i>Exclusive Deals for VIP 2 and up!
+        </div>
+        <div class="col-md-2 d-flex align-items-center">
+            <i class="bi bi-star icon-bold me-2"></i>Weekly New Arrivals
+        </div>
+        <div class="col-md-3 d-flex align-items-center">
+            <i class="bi bi-truck icon-bold me-2"></i>Free Shipping on Orders Over $100
+        </div>
+        <div class="col-md-2 d-flex align-items-center">
+            <i class="bi bi-geo-alt icon-bold me-2"></i>Track Your Order
+        </div>
+        <div class="col-md-2 d-flex align-items-center">
+            <i class="bi bi-tag icon-bold me-2"></i>10% Off on Your First Order!
+        </div>
+    </div>
+</div>
+
+<!-- Hero Section Carousel -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+    <div class="carousel-item active" style="background-image: url('images/hero-slider1.png'); height: 650px; background-size: cover; background-position: center;">
+    <div class="carousel-caption d-none d-md-block text-white" style="height: 100%; display: flex; align-items: flex-start; padding-top: 0;">
+         <button style="position: absolute; bottom: -100px; right: -100px; background: transparent; border: none;">
+            <img src="images/Button4.png" alt="Button" style="max-width: 100%; height: auto;">
+        </button>
+        </div>
+    </div>
+
+        <div class="carousel-item" style="background-image: url('images/hero-slider-2.png'); height: 650px; background-size: cover; background-position: center;">
+            <div class="carousel-caption d-none d-md-block text-white">
+         
+            </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+</div>
+    </div>
+
+    
+
+<!-- Wide Deals -->
+<div class="container-fluid text-center py-2 custom-bg-deals">
+    <div class="row">
+        <div class="col-md-3">
+           <b>$5 OFF</b><br>
+           <p>ON ORDERS ABOVE $50</p>
+        </div>
+        <div class="col-md-2">
+                <b>$15 OFF</b><br>
+           <p>ON ORDERS ABOVE $75</p>
+        </div>
+        <div class="col-md-2">
+                    <b>$20 OFF</b><br>
+           <p>ON ORDERS ABOVE $150</p>
+        </div>
+        <div class="col-md-2">
+                 <b>$30 OFF</b><br>
+           <p>ON ORDERS ABOVE $200</p>
+        </div>
+        <div class="col-md-3 d-flex align-items-center">
+            <button class="btn btn-sm" style="background: rgba(0, 0, 0, 1);
+;color: #fff;">CHECK OUT ALL SITE-WIDE DEALS</button>
+        </div>
+    </div>
+</div>
+
+<!-- VIP Exclusive -->
+<div class="container-fluid text-left py-2 custom-bg-vip">
+    <div class="row">
+        <div class="col-md-5">
+                <h1><b>BLACK FRIDAY EXCLUSIVE</b></h1>
+        </div>
+        <div class="col-md-3">
+           <p><b>FREE SHIPPING ON ALL ORDERS FOR<br>VIP 2 AND UP!</b></p>
+        </div>
+        <div class="col-md-4 d-flex align-items-center">
+            <button class="btn" style="background: transparent; border: none;width: 50%;"><img src="images/Button4.png" alt="Button" style="max-width:80%"></button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Now Trending -->
+<div class="container-fluid text-center py-2 custom-bg-trending">
+       <h2><b>Now Trending</b></h2>
+       <span>See what everyone's wearing right now</span>
+    <div class="row">
+        <div class="col-md-3">
+            <img src="images/winter.png"><br>
+            <span><b>WINTER FASHION</b></span><br>
+            <img src="images/outwear.png"><br>
+            <span><b>OUTWEAR</b></span>
+        </div>
+        <div class="col-md-3">
+            <img src="images/boots.png"><br>
+            <span><b>BOOTS</b></span><br>
+            <img src="images/whitedress.png"><br>
+            <span><b>WHITE DRESS</b></span>
+        </div>
+        <div class="col-md-3">
+            <img src="images/nightout.png"><br>
+            <span><b>NIGHT OUT</b></span><br>
+            <img src="images/sweaters.png"><br>
+            <span><b>SWEATERS</b></span>
+        </div>
+        <div class="col-md-3">
+            <img src="images/holidays.png"><br>
+            <span><b>HOLIDAYS</b></span><br>
+            <img src="images/party.png"><br>
+            <span><b>PARTY</b></span>
+        </div>
+    </div>
+<div class="container">
+    <div style="display: flex;justify-content: center;flex-direction: row;align-content: center;">
+        <button style="border: 1px solid black; background-color: transparent; color: black; padding: 5px 10px; margin: 0 5px; border-radius: 20px;">#Thanksgiving</button>
+        <button style="border: 1px solid black; background-color: transparent; color: black; padding: 5px 10px; margin: 0 5px; border-radius: 20px;">#NewYears</button>
+        <button style="border: 1px solid black; background-color: transparent; color: black; padding: 5px 10px; margin: 0 5px; border-radius: 20px;">#Knitted</button>
+        <button style="border: 1px solid black; background-color: transparent; color: black; padding: 5px 10px; margin: 0 5px; border-radius: 20px;">#Pajamas</button>
+        <button style="border: 1px solid black; background-color: transparent; color: black; padding: 5px 10px; margin: 0 5px; border-radius: 20px;">#WFH</button>
+        <button style="border: 1px solid black; background-color: transparent; color: black; padding: 5px 10px; margin: 0 5px; border-radius: 20px;">#FallFashion</button>
+    </div>
+</div>
+</div>
+
+<!-- New Arrivals -->
+<div class="container-fluid  py-2  custom-bg-new">
+    <h1><b>NEW<br>ARRIVALS</b></h1>
+    <p><b>Get ready for the holidays with us!</b></p>
+    <button class="btn" style="background: transparent; border: none;width: 50%;"><img src="images/Button4.png" alt="Button" style="max-width:80%"></button>
+</div>
+<!-- Recently Bought -->
+<div class="container-fluid text-left py-2 custom-bg-recently">
+    <h2 class="text-center"><b>Recently Bought</b></h2>
+    <div class="container mt-4">
+        <div class="row g-3"> <!-- Use g-3 for gutter spacing -->
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="images/festive.png" alt="Festive Looks" class="img-fluid">
+                    <p>Festive Looks Rust Red Ribbed Velvet Long Sleeve Bodysuit</p>
+                    <span><b>$38</b></span>
+                    <button class="btn btn-dark btn-sm mt-2 buy-btn" onclick="addToCart('Festive Looks Rust Red Ribbed Velvet Long Sleeve Bodysuit', 38)">
+      <i class="fas fa-shopping-cart"></i> Buy
+    </button> <!-- Buy button -->
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="images/chevron.png" alt="Chevron Flap Crossbody Bag" class="img-fluid">
+                    <p>Chevron Flap Crossbody Bag</p>
+                    <span style="color:#C1272D; font-weight: bold;">$5.77</span>
+                    <span style="color: black; text-decoration: line-through;">$7.34</span>
+                    <button class="btn btn-dark btn-sm mt-2 buy-btn">
+                        <i class="fas fa-shopping-cart"></i> Buy
+                    </button> <!-- Buy button -->
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="images/scarf.png" alt="Manilla Tan Multi Plaid Oversized Fringe Scarf" class="img-fluid">
+                    <p>Manilla Tan Multi Plaid Oversized Fringe Scarf</p>
+                    <span style="color:#C1272D; font-weight: bold;">$29</span>
+                    <span style="color: black; text-decoration: line-through;">$39</span>
+                    <button class="btn btn-dark btn-sm mt-2 buy-btn">
+                        <i class="fas fa-shopping-cart"></i> Buy
+                    </button> <!-- Buy button -->
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="images/puff.png" alt="Diamante Puff Sleeve Dress - Black" class="img-fluid">
+                    <p>Diamante Puff Sleeve Dress - Black</p>
+                    <span><b>$45.99</b></span>
+                    <button class="btn btn-dark btn-sm mt-2 buy-btn">
+                        <i class="fas fa-shopping-cart"></i> Buy
+                    </button> <!-- Buy button -->
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="images/formal.png" alt="Banneth Open Front Formal Dress in Black" class="img-fluid">
+                    <p>Banneth Open Front Formal Dress in Black</p>
+                    <span style="color:#C1272D; font-weight: bold;">$69</span>
+                    <span style="color: black; text-decoration: line-through;">$99.95</span>
+                    <button class="btn btn-dark btn-sm mt-2 buy-btn">
+                        <i class="fas fa-shopping-cart"></i> Buy
+                    </button> <!-- Buy button -->
+                </div>
+            </div>
+        </div> <!-- End of row -->
+    </div> <!-- End of container -->
+</div> <!-- End of container-fluid -->
+
+<!-- Your Next Inspo -->
+<div class="container-fluid text-center py-2 custom-bg-inspo">
+    <h2><b>Your Next Inspo</b></h2>
+    <p>Checkout who’s wearing what by using #THREADEDInspo on Instagram</p>
+    <div class="container mt-4">
+        <div class="row g-3"> <!-- Use g-3 for gutter spacing -->
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="images/Rectangle10.png"  class="img-fluid">
+                   
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="images/Rectangle12.png"  class="img-fluid">
+                    
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="images/Rectangle13.png"  class="img-fluid">
+                  
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="images/Rectangle14.png"  class="img-fluid">
+                   
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="images/Rectangle11.png"  class="img-fluid">
+                </div>
+            </div>
+     
+        </div> <!-- End of row -->
+                 <button class="btn btn-sm" style="background: #000000;color: #fff;">VIEW ALL POSTS</button>
+    </div> <!-- End of container -->
+</div> <!-- End of container-fluid -->
+<!-- Sign Up -->
+<div class="container-fluid text-left py-2 custom-bg-signup">
+    <div class="row">
+        <div class="col-md-8">
+            <h2><b>SIGN UP FOR EXCLUSIVE DEALS AND UPDATES</b></h2>
+        </div>
+        <div class="col-md-4">
+              <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email Address" aria-label="Recipient's username" aria-describedby="basic-addon2" style="background: #F2F2F2;border-radius: 0px;
+">
+                    <button class="btn" type="button" id="button-addon2" style="background:#fff;border-radius: 0px;"><i class="bi bi-chevron-compact-right"></i></button>
+            </div>
+        </div>
+    </div>
+    </div>
+<!-- Footer -->
+<footer class="container-fluid py-4 custom-bg-footer">
+    <div class="row">
+        <div class="col-md-3">
+            <h5>COMPANY INFO</h5>
+            <ul class="list-unstyled">
+                <li><a href="#">About THREADED</a></li>
+                <li><a href="#">Affiliate</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h5>HELP & SUPPORT</h5>
+            <ul class="list-unstyled">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">How To Order</a></li>
+                <li><a href="#">How To Track</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h5>CUSTOMER CARE</h5>
+            <ul class="list-unstyled">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Payment Methods</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h5>FOLLOW US</h5>
+            <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="me-2"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="me-2"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="me-2"><i class="bi bi-tiktok"></i></a>
+
+            <h5>WE ACCEPT</h5>
+            <!-- Ensure the icons for payment methods are present -->
+            <a href="#" class="me-2"><img src="images/p1.png" class="p-img"></a>
+            <a href="#" class="me-2"><img src="images/p2.png" class="p-img"></i></a>
+            <a href="#" class="me-2"><img src="images/p3.png" class="p-img"></i></a>
+            <a href="#" class="me-2"><img src="images/p4.png" class="p-img"></a>
+            <a href="#" class="me-2"><img src="images/p5.png" class="p-img"></i></a> <!-- Add PayPal icon if needed -->
+        </div>
+
+    </div>
+
+   
+
+    <!-- Copyright text and logo positioned together -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+        <p style="margin: 0;">&copy; 2021 THREADED. All Rights Reserved.</p> <!-- Ensure copyright text is black -->
+        <img src="images/Logo.png" alt="Logo" height="16" class="footer-img">
+    </div>
+
+    <!-- Custom CSS to apply styles -->
+    <style>
+        .custom-bg-footer {
+            color: #000; /* Set text color to black */
+            padding: 20px; /* Remove default padding */
+        }
+
+        /* Remove underline from links and set color to black */
+        a {
+            text-decoration: none;
+            color: inherit; /* Inherit color from parent (black) */
+        }
+        
+        /* Set icon color to black */
+        .bi {
+            color: black; /* Assuming Bootstrap Icons are used */
+        }
+        .footer-img{
+
+        }
+        
+        /* Additional styling for footer */
+    </style>
+</footer>
+<!-- Include Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>
