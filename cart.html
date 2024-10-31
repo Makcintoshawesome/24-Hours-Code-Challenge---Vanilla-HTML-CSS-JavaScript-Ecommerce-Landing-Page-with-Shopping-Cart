@@ -45,6 +45,7 @@
         </div>
     </div>
 
+    <script src="scripts.js"></script>
     <script>
         function renderCart() {
             const cartItemsContainer = document.querySelector('.cart-items');
@@ -52,6 +53,7 @@
 
             if (cart.length === 0) {
                 cartItemsContainer.innerHTML = '<p class="text-center">Your cart is empty</p>';
+                updateCartSummary();
                 return;
             }
 
@@ -67,7 +69,7 @@
                             <h5 class="card-title">${item.name}</h5>
                             <p class="card-text">$${item.price.toFixed(2)}</p>
                         </div>
-                        <button class="btn btn-danger" onclick="removeFromCart('${item.id}')">
+                        <button class="btn btn-danger" onclick="removeItemFromCart('${item.id}')">
                             Remove
                         </button>
                     </div>
@@ -76,6 +78,14 @@
             });
 
             updateCartSummary();
+        }
+
+        function removeItemFromCart(itemId) {
+            cart = cart.filter(item => item.id !== itemId);
+            saveCartToLocalStorage();
+            renderCart();
+            updateCartCount();
+            updateCartDropdown();
         }
 
         function updateCartSummary() {
@@ -102,7 +112,5 @@
             renderCart();
         });
     </script>
-
-    <script src="scripts.js"></script>
 </body>
 </html>

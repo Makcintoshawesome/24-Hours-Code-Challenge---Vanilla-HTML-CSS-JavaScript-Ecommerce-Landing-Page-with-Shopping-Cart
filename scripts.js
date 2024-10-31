@@ -76,6 +76,17 @@ function removeFromCart(id) {
     }
 }
 
+// Remove item from cart (global function)
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    updateCartCount();
+    updateCartDropdown();
+    saveCartToLocalStorage();
+    if (window.location.pathname.includes('cart.html')) {
+        renderCart();
+    }
+}
+
 // Save cart to localStorage
 function saveCartToLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
